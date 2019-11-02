@@ -1,10 +1,6 @@
-<?php
- //session_start();
-//session_destroy();
-//session_unset();
- /* если пользователя сюда перенаправели,то он не идентифицироваан, а значит ему нужно дать выбор язык,
- после этого пользователя отправляют на файл*/
-?>
+
+ <!-- если пользователя сюда перенаправели,то он не идентифицироваан, а значит ему нужно дать выбор язык,
+ после этого пользователя отправляют на файл -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,7 +13,7 @@
     <title>polyglot</title>
 </head>
 <body>
- <form method="post" action="form.php" align = 'middle'>
+ <form method="post" action="home_page.php" align = 'middle'>
  <p><font size="5" color="red" face="Arial">Выбирите язык</font></p>
         <div class="form-wrap">
        <div>

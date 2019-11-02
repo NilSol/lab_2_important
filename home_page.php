@@ -1,10 +1,14 @@
-
- <!-- Это первый файл который видит пользователь и в нем находиться форма в которую пользователь вбивает логин и пароль
-  идет переадресация на index.php -->
+<?php
+include 'session.php';
+_session();
+var_dump($_SESSION['login']);
+$forename = $_POST['login'];
+?>
 <!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -13,25 +17,14 @@
     <title>polyglot</title>
 </head>
 <body>
-    <form method="post" action="index.php" align = 'middle'>
-        <div class="form-wrap">
-            <div class="profile">
-                <h1>Вход</h1>
-            </div>
-        <div>
-            <label for="login">login</label>
-            <input type="text" name="login" required>
-        </div>
-        <div>
-            <label for="password">password</label>
-            <input type="password" name="password" required>
-        </div>
-        </div>
-        <div>
-            <div class="select-arrow"></div>
-        <button type="submit" class="btn btn-outline-primary">Отправить</button>
-        </div>
-    </form>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4"><?php echo $forename ?></h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

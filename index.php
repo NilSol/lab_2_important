@@ -1,9 +1,9 @@
 <?php
- session_start();
-session_destroy();
-session_unset();
+include 'session.php';
+_session();
+
  /* После того как пользователь ввел свои данные его перенаправляют на этот файл если данные верные,
-  то идет приветствие если нет то файл перенаправляет на language.php*/
+  то идет приветствие, а потом на home_page.php если нет то файл перенаправляет на language.php*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,12 +47,11 @@ foreach ($users as $key=>$value) {
         $_SESSION['user_id']=$key;
         break;
     }
-    else
+}
+ if($value['login'] !== $_POST['login'] && $value['password'] !== $_POST['password'])
     {
         include 'call_forwarding.php';
-    break;
     }
-}
 $forename = $_SESSION['login'];
   $lang = $users[ $_SESSION['user_id']]['lang'];
 ?>
@@ -62,7 +61,7 @@ $forename = $_SESSION['login'];
     </div>
 </div>
 <script type="text/javascript"> setTimeout(function(){
-        window.location.href = 'google.com';
+        window.location.href = 'home_page.php';
     }, 3 * 1000); </script>
 </body>
 </html>
