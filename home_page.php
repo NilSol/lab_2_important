@@ -1,9 +1,37 @@
 <?php
-include 'session.php';
+require 'session_array.php';
 _session();
-var_dump($_SESSION['login']);
-$forename = $_POST['login'];
+$forename = $_SESSION['login'];
+if(isset($_POST['language'])) {
+    switch ($_POST['language']) {
+        case 'ru':
+            $ru_1 = $tongue['ru'][1];
+            $ru_2 = $tongue['ru'][2];
+            break;
+        case 'ua':
+            $ru_1 = $tongue['ua'][1];
+            $ru_2 = $tongue['ua'][2];
+            break;
+        case 'en':
+            $ru_1 = $tongue['en'][1];
+            $ru_2 = $tongue['en'][2];
+            break;
+        case 'it':
+            $ru_1 = $tongue['it'][1];
+            $ru_2 = $tongue['it'][2];
+            break;
+
+    }
+    $word_1 = $ru_1;
+    $word_2 = $ru_2;
+}
+else {
+    $lang = $users[$_SESSION['user_id']]['lang'];
+    $word_1 =  $tongue[$lang][1];
+    $word_2 = $tongue[$lang][2];
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,11 +45,10 @@ $forename = $_POST['login'];
     <title>polyglot</title>
 </head>
 <body>
-
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4"><?php echo $forename ?></h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1 class="display-4"><?php echo $forename . ', '. $word_1 ?></h1>
+        <p class="lead"><?php echo $word_2?></p>
     </div>
 </div>
 

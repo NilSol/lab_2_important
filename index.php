@@ -1,7 +1,6 @@
 <?php
-include 'session.php';
+require 'session_array.php';
 _session();
-
  /* После того как пользователь ввел свои данные его перенаправляют на этот файл если данные верные,
   то идет приветствие, а потом на home_page.php если нет то файл перенаправляет на language.php*/
 ?>
@@ -19,26 +18,9 @@ _session();
 </head>
 <body>
 <?php
-$users = array (
-  array  ('login' => 'Vasisualiy', 'password' => '12345', 'lang' => 'ru'),
-   array ('login' => 'Afanasiy', 'password' => '54321', 'lang' => 'en'),
-   array ('login' => 'Petro', 'password' => 'EkUC42nzmu', 'lang' => 'ua'),
-   array ('login' => 'Pedrolus', 'password' => 'Cogito_ergo_sum', 'lang' => 'it'),
-   array ('login' => 'Sasha', 'password' => 'Ignorantia_non_excusat '),
-);
-$tongue= array(
-        'ru' => array ('Здравствуйте', 'Вы на главной странице' ,'Не трогай меня и я не трону тебя'),
-        'en' => array ('Hello', 'You are on the main page',  'Do not touch me and I will not touch you'),
-        'ua' => array ('Вітаємо','Ви на головній сторінці', 'Чи не чіпай мене і я не трону тебе'),
-        'it' =>array('Ciao','Sei nella pagina principale','Non toccarmi e io non ti toccherò'),
-)
-?>
-
-
-<?php
 $_SESSION['login'] = $_POST['login'];
 $_SESSION['password'] = $_POST['password'];
- 
+
 foreach ($users as $key=>$value) {
     if ($value['login'] == $_POST['login'] && $value['password'] == $_POST['password'])
     {
@@ -50,7 +32,7 @@ foreach ($users as $key=>$value) {
 }
  if($value['login'] !== $_POST['login'] && $value['password'] !== $_POST['password'])
     {
-        include 'call_forwarding.php';
+        require 'call_forwarding.php';
     }
 $forename = $_SESSION['login'];
   $lang = $users[ $_SESSION['user_id']]['lang'];
