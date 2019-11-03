@@ -1,8 +1,6 @@
 <?php
-function _session()
-{
+
     session_start();
-}
 
 $users = array (
     array  ('login' => 'Vasisualiy', 'password' => '12345', 'lang' => 'ru'),

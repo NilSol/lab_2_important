@@ -1,8 +1,27 @@
 <?php
 require 'session_array.php';
-_session();
  /* После того как пользователь ввел свои данные его перенаправляют на этот файл если данные верные,
   то идет приветствие, а потом на home_page.php если нет то файл перенаправляет на language.php*/
+$_SESSION['login'] = $_POST['login'];
+$_SESSION['password'] = $_POST['password'];
+
+foreach ($users as $key=>$value) {
+    if ($value['login'] == $_POST['login'] && $value['password'] == $_POST['password'])
+    {
+        $_SESSION['login'] = $_POST['login'];
+        $_SESSION['lang'] = $value['lang'];
+        $_SESSION['user_id']=$key;
+        break;
+    }
+}
+if($value['login'] !== $_POST['login'] && $value['password'] !== $_POST['password'])
+{
+    // require 'call_forwarding.php';
+    header('Location: language.php');
+    exit();
+}
+$forename = $_SESSION['login'];
+$lang = $users[ $_SESSION['user_id']]['lang'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,26 +36,6 @@ _session();
     <title>polyglot</title>
 </head>
 <body>
-<?php
-$_SESSION['login'] = $_POST['login'];
-$_SESSION['password'] = $_POST['password'];
-
-foreach ($users as $key=>$value) {
-    if ($value['login'] == $_POST['login'] && $value['password'] == $_POST['password'])
-    {
-        $_SESSION['login'] = $_POST['login'];
-        $_SESSION['lang'] = $value['lang'];
-        $_SESSION['user_id']=$key;
-        break;
-    }
-}
- if($value['login'] !== $_POST['login'] && $value['password'] !== $_POST['password'])
-    {
-        require 'call_forwarding.php';
-    }
-$forename = $_SESSION['login'];
-  $lang = $users[ $_SESSION['user_id']]['lang'];
-?>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4"><?php echo $forename . ' '. $tongue[$lang][0]; ?></h1

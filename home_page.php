@@ -1,6 +1,5 @@
 <?php
 require 'session_array.php';
-_session();
 $forename = $_SESSION['login'];
 if(isset($_POST['language'])) {
     switch ($_POST['language']) {
@@ -32,7 +31,7 @@ else {
 }
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
