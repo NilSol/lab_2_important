@@ -19,6 +19,10 @@ if(isset($_POST['language'])) {
             $ru_1 = $tongue['it'][1];
             $ru_2 = $tongue['it'][2];
             break;
+        case 'iv':
+            $ru_1 = $tongue['iv'][1];
+            $ru_2 = $tongue['iv'][2];
+            break;
 
     }
     $word_1 = $ru_1;
@@ -34,7 +38,6 @@ if(isset($_POST['submit']))
     __exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +64,6 @@ if(isset($_POST['submit']))
     <button type="submit" name="submit" class="btn btn-outline-primary">Log out</button>
 </form>
 
-
 <!-- Следущее задание-->
 <form action="" method="post" align = 'left'>
     <div class="select-arrow"></div>
@@ -80,7 +82,6 @@ if(isset($_POST['submit']))
             <input type="number"   name="salary" required min="1" max="9999" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength||1/1);this.value=(this.value   < 1) ? (1/1) : this.value;"/>
             <p> <input TYPE="submit" value ="Посчиттать" class="btn btn-outline-primary"></p>
 </form>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -22,6 +22,7 @@
                 <option value="en">English</option>
                 <option value="ua">Український</option>
                 <option value="it">Italiano</option>
+                <option value="iv">Hebrew</option>
             </select>
             <div class="select-arrow"></div>
         <button type="submit" class="btn btn-outline-primary">Далее</button>
