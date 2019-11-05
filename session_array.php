@@ -1,5 +1,12 @@
 <?php
 
+ function __exit()
+ {
+     session_destroy();
+     session_unset();
+     header('Location: form.php');
+     exit();
+ }
     session_start();
 
 $users = array (

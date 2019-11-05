@@ -29,6 +29,10 @@ else {
     $word_1 =  $tongue[$lang][1];
     $word_2 = $tongue[$lang][2];
 }
+if(isset($_POST['submit']))
+{
+    __exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +53,33 @@ else {
         <h1 class="display-4"><?php echo $forename . ', '. $word_1 ?></h1>
         <p class="lead"><?php echo $word_2?></p>
     </div>
+    <div>
+    </div>
 </div>
+<form method="POST">
+    <div class="select-arrow"></div>
+    <button type="submit" name="submit" class="btn btn-outline-primary">Log out</button>
+</form>
+
+
+<!-- Следущее задание-->
+<form action="" method="post" align = 'left'>
+    <div class="select-arrow"></div>
+    <b> Выберите товар: </b>
+    <div class="form-wrap">
+        <div>
+            <select name="product" required  autofocus>
+                <option value="">Товар</option>
+                <option value="ap">Apple</option>
+                <option value="su">Sumsung</option>
+                <option value="xi">Xiaomi</option>
+                <option value="me">Meizu</option>
+            </select>
+            <div class="select-arrow"></div>
+            <b>Выбирите количиства товара: </b>
+            <input type="number"   name="salary" required min="1" max="9999" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength||1/1);this.value=(this.value   < 1) ? (1/1) : this.value;"/>
+            <p> <input TYPE="submit" value ="Посчиттать" class="btn btn-outline-primary"></p>
+</form>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
