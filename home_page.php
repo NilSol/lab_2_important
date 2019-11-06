@@ -1,38 +1,7 @@
 <?php
+// После того как пользователь авторизовался появляется форма с выбором товара и корзина
 require 'session_array.php';
 $forename = $_SESSION['login'];
-if(isset($_POST['language'])) {
-    switch ($_POST['language']) {
-        case 'ru':
-            $ru_1 = $tongue['ru'][1];
-            $ru_2 = $tongue['ru'][2];
-            break;
-        case 'ua':
-            $ru_1 = $tongue['ua'][1];
-            $ru_2 = $tongue['ua'][2];
-            break;
-        case 'en':
-            $ru_1 = $tongue['en'][1];
-            $ru_2 = $tongue['en'][2];
-            break;
-        case 'it':
-            $ru_1 = $tongue['it'][1];
-            $ru_2 = $tongue['it'][2];
-            break;
-        case 'iv':
-            $ru_1 = $tongue['iv'][1];
-            $ru_2 = $tongue['iv'][2];
-            break;
-
-    }
-    $word_1 = $ru_1;
-    $word_2 = $ru_2;
-}
-else {
-    $lang = $users[$_SESSION['user_id']]['lang'];
-    $word_1 =  $tongue[$lang][1];
-    $word_2 = $tongue[$lang][2];
-}
 if(isset($_POST['submit']))
 {
     __exit();
@@ -59,29 +28,11 @@ if(isset($_POST['submit']))
     <div>
     </div>
 </div>
-<form method="POST">
+<form method="post">
     <div class="select-arrow"></div>
     <button type="submit" name="submit" class="btn btn-outline-primary">Log out</button>
 </form>
-
-<!-- Следущее задание-->
-<form action="" method="post" align = 'left'>
-    <div class="select-arrow"></div>
-    <b> Выберите товар: </b>
-    <div class="form-wrap">
-        <div>
-            <select name="product" required  autofocus>
-                <option value="">Товар</option>
-                <option value="ap">Apple</option>
-                <option value="su">Sumsung</option>
-                <option value="xi">Xiaomi</option>
-                <option value="me">Meizu</option>
-            </select>
-            <div class="select-arrow"></div>
-            <b>Выбирите количиства товара: </b>
-            <input type="number"   name="salary" required min="1" max="9999" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength||1/1);this.value=(this.value   < 1) ? (1/1) : this.value;"/>
-            <p> <input TYPE="submit" value ="Посчиттать" class="btn btn-outline-primary"></p>
-</form>
+<button  type="submit" name="submit" class="btn btn-outline-primary" onClick='location.href="add.php"'><?php echo $word_7?></button>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

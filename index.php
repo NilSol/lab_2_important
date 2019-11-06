@@ -1,7 +1,7 @@
 <?php
 require 'session_array.php';
  /* После того как пользователь ввел свои данные его перенаправляют на этот файл если данные верные,
-  то идет приветствие, а потом на home_page.php если нет то файл перенаправляет на language.php*/
+  то идет приветствие, а потом на home_page_add.php если нет то файл перенаправляет на language.php*/
 foreach ($users as $key=>$value) {
         if ($_POST['login'] == $value['login'] && $_POST['password'] == $value['password']) {
             $_SESSION['login'] = $_POST['login'];
