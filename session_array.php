@@ -26,36 +26,22 @@ $tongue= array(
 );
 if(isset($_POST['language'])) {
     $lang = $_POST['language'];
-    $word_1 = $tongue[$lang][1];
-    $word_2 = $tongue[$lang][2];
-    $word_3 = $tongue[$lang][5]; // Выберите товар
-    $word_4 = $tongue[$lang][3]; // Товар
-    $word_5 = $tongue[$lang][4]; // Выберите количество товара
-    $word_6 = $tongue[$lang][6]; // Посчитать
-    $word_7 = $tongue[$lang][7]; // Дальше
-    $word_8 = $tongue[$lang][8]; // Наименование
-    $word_9 = $tongue[$lang][9]; // Количество
-    $word_10 = $tongue[$lang][10]; //Удалить
-    $word_11 = $tongue[$lang][11]; // Корзина покупок
-    $word_12 = $tongue[$lang][12]; // К оплате
-    $word_13 = $tongue[$lang][13]; // Вернуться в магазин
-    $word_14 = $tongue[$lang][14]; // Платить
 }
 else {
     $lang = $users[$_SESSION['user_id']]['lang'];
-    $word_1 =  $tongue[$lang][1];
-    $word_2 = $tongue[$lang][2];
-    $word_3 = $tongue[$lang][5];
-    $word_4 = $tongue[$lang][3];
-    $word_5 = $tongue[$lang][4];
-    $word_6 = $tongue[$lang][6];
-    $word_7 = $tongue[$lang][7];
-    $word_8 = $tongue[$lang][8];
-    $word_9 = $tongue[$lang][9];
-    $word_10 = $tongue[$lang][10];
-    $word_11 = $tongue[$lang][11];
-    $word_12 = $tongue[$lang][12];
-    $word_13 = $tongue[$lang][13];
-    $word_14 = $tongue[$lang][14];
 }
+$word_1 = $tongue[$lang][1];
+$word_2 = $tongue[$lang][2];
+$word_3 = $tongue[$lang][5]; // Выберите товар
+$word_4 = $tongue[$lang][3]; // Товар
+$word_5 = $tongue[$lang][4]; // Выберите количество товара
+$word_6 = $tongue[$lang][6]; // Посчитать
+$word_7 = $tongue[$lang][7]; // Дальше
+$word_8 = $tongue[$lang][8]; // Наименование
+$word_9 = $tongue[$lang][9]; // Количество
+$word_10 = $tongue[$lang][10]; //Удалить
+$word_11 = $tongue[$lang][11]; // Корзина покупок
+$word_12 = $tongue[$lang][12]; // К оплате
+$word_13 = $tongue[$lang][13]; // Вернуться в магазин
+$word_14 = $tongue[$lang][14]; // Платить
 ?>

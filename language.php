@@ -13,11 +13,11 @@
 </head>
 <body>
  <form method="post" action="home_page.php" align = 'middle'>
- <p><font size="5" color="red" face="Arial">Выбирите язык</font></p>
+ <p><font size="5" color="red" face="Arial">Выберите язык</font></p>
         <div class="form-wrap">
        <div>
             <select name="language" required  autofocus>
-                <option value="">Выбирите язык</option>
+                <option value="">Выберите язык</option>
                 <option value="ru">Русский</option>
                 <option value="en">English</option>
                 <option value="ua">Український</option>

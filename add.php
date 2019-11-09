@@ -1,11 +1,10 @@
 <?php
 require 'cart.php';
 require 'session_array.php';
-$product = $_POST['product'];
-$count = $_POST['count'];
-$product = $products[$product];
-$_SESSION['cart']['sum'] += $product['price'] * $count;
-$_SESSION['cart']['items'][] = ['name' => $product['name'], 'count' => $count, 'price' => $product['price']];
+if(isset($_POST['submit']))
+{
+    __exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,29 +21,29 @@ $_SESSION['cart']['items'][] = ['name' => $product['name'], 'count' => $count, '
 <body>
 <form action="add.php" method="post" align = 'left' enctype="multipart/form-data">
     <div class="select-arrow"></div>
-    <b><?php echo $word_3 = $tongue[$lang][5]; ?></b>
+    <b><?php echo $word_3 ?></b>
             <select name="product" required  autofocus>
-                <option value=""><?php echo $word_4 = $tongue[$lang][3]; ?></option>
+                <option value=""><?php echo $word_4 ?></option>
                 <?php foreach ($products as $id => $type) { ?>
                     <option value="<?php echo $id ?>"><?php echo $type['name'] ?></option>
                 <?php } ?>
             </select>
             <div class="select-arrow"></div>
-            <b><?php echo $word_5 = $tongue[$lang][4]; ?></b>
+            <b><?php echo $word_5 ?></b>
             <input type="number"   name="count" required min="1" max="9999" maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength||1/1);this.value=(this.value   < 1) ? (1/1) : this.value;"/>
-            <p> <input TYPE="submit" value ="<?php echo $word_6 = $tongue[$lang][6]; ?>" class="btn btn-outline-primary"></p>
+            <p> <input TYPE="submit" value ="<?php echo $word_6?>" class="btn btn-outline-primary"></p>
 </form>
 
 <pre>
     <div style="color:brown;">
-        <?php echo  $word_12 = $tongue[$lang][12] . ' ' . $_SESSION['cart']['sum'];?>
+        <?php echo  $word_12 . ' ' . $_SESSION['cart']['sum'];?>
 <table>
         <?php foreach($_SESSION['cart']['items'] as $item){
             echo '<tr><td>'. $item['name']. '</td><td>'. $item['price']. '</td></tr>';
         }?>
         </table>
     </div>
-      <button onclick='location.href="list.php"'> <?php echo $word_11 = $tongue[$lang][11]; ?></button>
+      <button onclick='location.href="list.php"'> <?php echo $word_11 ?></button>
 </pre>
 <form method="post">
     <div class="select-arrow"></div>

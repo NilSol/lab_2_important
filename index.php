@@ -2,18 +2,22 @@
 require 'session_array.php';
  /* После того как пользователь ввел свои данные его перенаправляют на этот файл если данные верные,
   то идет приветствие, а потом на home_page_add.php если нет то файл перенаправляет на language.php*/
-foreach ($users as $key=>$value) {
-        if ($_POST['login'] == $value['login'] && $_POST['password'] == $value['password']) {
+foreach ($users as $key=>$value)
+{
+        if ($_POST['login'] == $value['login'] && $_POST['password'] == $value['password'])
+        {
             $_SESSION['login'] = $_POST['login'];
             $_SESSION['lang'] = $value['lang'];
             $_SESSION['user_id'] = $key;
             break;
         }
-        if ($_POST['login'] == 'Sasha' && $_POST['password'] == 'Ignorantia_non_excusat') {
+       if (!empty($value['lang']))
+       {
             $_SESSION['login'] = $_POST['login'];
             header('Location: language.php');
             exit();
-        }
+       }
+
         if($key === (count($users) - 1))
         {
             __exit();

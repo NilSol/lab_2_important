@@ -43,15 +43,15 @@ if(isset($_POST['submit']))
 <br>
 <div class="inner">
     <h3  align="center">
-        <?php echo $word_11 = $tongue[$lang][11]; ?>
+        <?php echo $word_11 ?>
     </h3>
     <div>
         <table>
             <thead>
             <tr>
-                <th> <?php echo $word_8 = $tongue[$lang][8]; ?></th>
-                <th><?php echo $word_9 = $tongue[$lang][9]; ?></th>
-                <th class="right aligned"><?php echo $word_10 = $tongue[$lang][10]; ?></th>
+                <th> <?php echo $word_8 ?></th>
+                <th><?php echo $word_9; ?></th>
+                <th class="right aligned"><?php echo $word_10 ?></th>
             </tr>
             </thead>
             <tbody>
@@ -59,7 +59,7 @@ if(isset($_POST['submit']))
                 <tr>
                     <td width=70%><?php echo $item['name'] ?></td>
                     <td width=15%><?php echo $item['count'] ?></td>
-                    <td width=15% class="right aligned"><a href='delete.php?id=<?php echo $id ?>'><?php echo $word_10 = $tongue[$lang][10]; ?></a>
+                    <td width=15% class="right aligned"><a href='delete.php?id=<?php echo $id ?>'><?php echo $word_10 ?></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -67,10 +67,10 @@ if(isset($_POST['submit']))
         </table>
         <table>
             <td>
-                <button onclick='location.href="add.php"'><?php echo $word_13 = $tongue[$lang][13]; ?></button>
+                <button onclick='location.href="add.php"'><?php echo $word_13 ?></button>
             </td>
             <td><h2
-                    align="right"><?php echo $word_14 = $tongue[$lang][14] . ' ' . $_SESSION['cart']['sum']; ?></h2></td>
+                    align="right"><?php echo $word_14 . ' ' . $_SESSION['cart']['sum']; ?></h2></td>
         </table>
     </div>
 </div>

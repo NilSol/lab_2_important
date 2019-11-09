@@ -14,6 +14,13 @@ function delete($id)
     unset($_SESSION['cart']['items'][$id]);
     calc();
 }
+
+$product = $_POST['product'];
+$count = $_POST['count'];
+$product = $products[$product];
+$_SESSION['cart']['sum'] += $product['price'] * $count;
+$_SESSION['cart']['items'][] = ['name' => $product['name'], 'count' => $count, 'price' => $product['price']];
+
 function calc()
 {
     $_SESSION['cart']['sum'] = 0;
