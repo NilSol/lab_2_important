@@ -11,12 +11,13 @@ foreach ($users as $key=>$value)
             $_SESSION['user_id'] = $key;
             break;
         }
-       if (!empty($value['lang']))
-       {
-            $_SESSION['login'] = $_POST['login'];
-            header('Location: language.php');
-            exit();
-       }
+
+    if (!empty($value['lang']))
+    {
+        $_SESSION['login'] = $_POST['login'];
+        header('Location: language.php');
+        exit();
+    }
 
         if($key === (count($users) - 1))
         {
